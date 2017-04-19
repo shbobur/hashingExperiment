@@ -7,7 +7,7 @@
 Argon2Hash::Argon2Hash()
 {
     t_cost = 1;                             // n-pass computation
-    m_cost = 1 << 14;                       // Default: 4 mebibytes memory usage
+    m_cost = 1 << 17;                       // Default: 4 mebibytes memory usage
     parallelism = 1;
 }
 

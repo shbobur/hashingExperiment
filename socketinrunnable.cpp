@@ -12,6 +12,7 @@ SocketInRunnable::SocketInRunnable(int handle) : descriptor(handle)
     hashingFunctions[0] = new Argon2Hash();
     hashingFunctions[1] = new BCryptHash();
     hashingFunctions[2] = new SCryptHash();
+    hashingFunctions[3] = new SHA512hash();
 }
 
 SocketInRunnable::~SocketInRunnable()
@@ -51,9 +52,11 @@ void SocketInRunnable::hash()
     int hashType = sharedData.getHashType();
 
     thisHash = "";
+    QString password = "!@#JLKFD*sad2" + QString::number(qrand());
+    QString salt = "010203040506" + QString::number(qrand());
     for (int i = 0; i < sharedData.getNumOfHashingOps(); i++) {
-        hashingFunctions[hashType]->setPass("password.");
-        hashingFunctions[hashType]->setSalt("saltsaltsalt");
+        hashingFunctions[hashType]->setPass(password);
+        hashingFunctions[hashType]->setSalt(salt);
         thisHash += hashingFunctions[hashType]->hash();
     }
 }

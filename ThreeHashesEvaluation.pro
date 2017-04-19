@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     form.cpp \
     multithreadserver.cpp \
     shareddata.cpp \
-    socketinrunnable.cpp
+    socketinrunnable.cpp \
+    sha512hash.cpp
 
 HEADERS += \
     argon2hash.h \
@@ -33,9 +34,10 @@ HEADERS += \
     form.h \
     multithreadserver.h \
     shareddata.h \
-    socketinrunnable.h
+    socketinrunnable.h \
+    sha512hash.h
 
-LIBS += -largon2 -lscrypt
+LIBS += -largon2 -lscrypt -lcrypto
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/bcrypt/release/ -lbcrypt

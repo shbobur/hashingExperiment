@@ -50,6 +50,11 @@
              <string>scrypt</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>sha512</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>

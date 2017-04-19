@@ -12,7 +12,6 @@ public:
     ~Argon2Hash();
 
     QString hash();
-    bool verify(QString pass, QString encodedHash);
 
 private:
     quint32 t_cost;            // n-pass computation

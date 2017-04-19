@@ -10,6 +10,7 @@
 #include "argon2hash.h"
 #include "bcrypthash.h"
 #include "scrypthash.h"
+#include "sha512hash.h"
 
 #include "shareddata.h"
 
@@ -28,7 +29,7 @@ private:
     SharedData sharedData;
     QString thisHash;
 
-    Hash* hashingFunctions[3];
+    Hash* hashingFunctions[4];
 
     void hash();
 
